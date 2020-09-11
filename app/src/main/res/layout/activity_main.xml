@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="com.example.databinding.User"/>
+
+    </data>
+    
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <View
+        android:layout_width="@dimen/indicator_size"
+        android:layout_height="@dimen/indicator_size"
+    android:text="@{user.isOnline ? @drawable/shape_online : 	@drawable/shape_offline}"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.name+user.surname}"
+       />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{user.status}"
+        />
+</RelativeLayout>
+
+</layout>
